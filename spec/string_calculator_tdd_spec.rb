@@ -22,4 +22,10 @@ RSpec.describe StringCalculatorTDD do
   it "supports custom delimiter" do
     expect(StringCalculatorTDD.new.add_numbers("//;\n1;2")).to eq(3)
   end
+
+  it "throws exception on negative numbers" do
+    expect {
+     StringCalculatorTDD.new.add_numbers("1,-2,-3")
+    }.to raise_error("negative numbers not allowed -2,-3")
+  end
 end
