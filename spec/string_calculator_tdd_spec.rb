@@ -10,4 +10,8 @@ RSpec.describe StringCalculatorTDD do
     calc = StringCalculatorTDD.new
     expect(calc.add_numbers("1")).to eq(1)
   end
+
+  it "returns sum of two comma-separated numbers" do
+    expect(StringCalculatorTDD.new.add_numbers("1,2")).to eq(3)
+  end
 end
